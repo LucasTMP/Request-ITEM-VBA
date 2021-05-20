@@ -31,10 +31,10 @@
 ## Sobre o projeto
 
 <p align="center" width="100%">
-    <img width="33%" src="https://i.ibb.co/8mFLRKL/nf.png"> 
+    <img width="33%" src="https://i.ibb.co/g9t7MJm/item.jpg"> 
 </p>
 
-A planilha foi elaborada para sanar uma necessidade real de uma empresa do ramo industrial, que precisava automatizar seu processo de pedido de emissão de nota fiscal (NF) para o setor fiscal. Ela foi elaborada pensando em agregar praticidade para esse processo interno, visando realizar todo o procedimento em uma única aplicação, ou seja, preenchimento do formulário, transformação do formulário em PDF e envio do arquivo para o e-mail interno do setor fiscal seguindo um modelo de mensagem contendo informações sobre quem enviou e outros dados de rastreabilidade.
+A planilha foi elaborada para sanar uma necessidade real de uma empresa do ramo industrial, que precisava automatizar o seu processo de cadastro de item para o setor contábil. Ela foi elaborada pensando em agregar praticidade para esse processo interno, visando realizar todo o procedimento em uma única aplicação, ou seja, preenchimento do formulário, transformação do formulário em PDF e envio do arquivo para o e-mail interno do setor contábil, seguindo um modelo de mensagem contendo informações sobre quem enviou e outros dados de rastreabilidade. Também foi elaborado um formulário web (HTML), seguindo o mesmo modelo da planilha, para permitir ser usado dentro do modulo do ERP da empresa.
 
 ### Desenvolvido com
 
@@ -42,7 +42,8 @@ Esse projeto foi desenvolvido utilizando a ferramenta Excel do pacote Office, em
 
 * [Excel](https://www.microsoft.com/pt-br/microsoft-365/excel)
 * [Pacote Office](https://www.microsoft.com/pt-br/microsoft-365/business/compare-all-microsoft-365-business-products-b?&ef_id=EAIaIQobChMIw83Cx5HK8AIVwoORCh0CWwJ3EAAYASAAEgLcufD_BwE:G:s&OCID=AID2100139_SEM_EAIaIQobChMIw83Cx5HK8AIVwoORCh0CWwJ3EAAYASAAEgLcufD_BwE:G:s&lnkd=Google_O365SMB_Brand&gclid=EAIaIQobChMIw83Cx5HK8AIVwoORCh0CWwJ3EAAYASAAEgLcufD_BwE)
-
+* Foi utilizado também para o formulário web: HTML, CSS, JAVASCRIPT.
+* [JQuery](https://jquery.com/)
 
 ## Como começar
 
@@ -55,7 +56,7 @@ Possuir a ferramenta Excel instalada, lembrando que a planilha está otimizada s
 
 ## Como usar
 
-Para utilizar a planilha deve realizar o preenchimento dos campos do formulário de acordo com os dados solicitados, depois basta clicar no botão *[Enviar Formulário]* que a própria aplicação converterá o formulário criado em Excel para o PDF, salvando no local escolhido (definido como padrão em C:\ no código), estrutura um e-mail colocando o arquivo em anexo e realizando o envio da mensagem para o e-mail do setor financeiro.
+Para utilizar a planilha deve realizar o preenchimento dos campos do formulário de acordo com os dados solicitados, depois basta clicar no botão *[Enviar Formulário]* que a própria aplicação converterá o formulário criado em Excel para o PDF, salvando no local escolhido (definido como padrão em C:\ no código), estrutura um e-mail colocando o arquivo em anexo e realizando o envio da mensagem para o e-mail do setor contábil.
 
 Todos os parâmetros podem ser editados pelo VBA, como o servidor usado pelo SMTP, a conta utilizada para enviar o e-mail e o modelo de mensagem. Já os parâmetros do formulário estão configurados em planilhas ocultas, basta editá-los de acordo com a sua necessidade. 
 
