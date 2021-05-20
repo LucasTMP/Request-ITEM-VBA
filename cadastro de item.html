@@ -1,0 +1,1267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Solicitação de Cadastro de Item</title>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style type="text/css">
+.classname {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+  background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+  background-color:#ededed;
+  -webkit-border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-left-radius:6px;
+  -webkit-border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-top-right-radius:6px;
+  -webkit-border-bottom-right-radius:6px;
+  -moz-border-radius-bottomright:6px;
+  border-bottom-right-radius:6px;
+  -webkit-border-bottom-left-radius:6px;
+  -moz-border-radius-bottomleft:6px;
+  border-bottom-left-radius:6px;
+text-indent:0;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+height:50px;
+  line-height:50px;
+width:100px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #ffffff;
+}.classname:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+  background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+  background-color:#dfdfdf;
+}.classname:active {
+  position:relative;
+  top:1px;
+}
+  .remove {
+  -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  box-shadow:inset 0px 39px 0px -24px #e67a73;
+  background-color:#e4685d;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 15px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #b23e35;
+}
+.remove:hover {
+  background-color:#eb675e;
+}
+.remove:active {
+  position:relative;
+  top:1px;
+}
+
+.add {
+  -moz-box-shadow:inset 0px 39px 0px -24px #3bef58;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #3bef58;
+  box-shadow:inset 0px 39px 0px -24px #3bef58;
+  background-color:#18e812;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 15px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #14ad10;
+}
+.add:hover {
+  background-color:#24e61ff7;
+}
+.add:active {
+  position:relative;
+  top:1px;
+}
+
+  </style>
+
+  <style type="text/css">
+
+  body{
+    margin: 0px;
+    width: 100%;
+  }
+
+  .header_top{
+    font-size: 30px;
+    color: black;
+  }
+
+  #header{
+    width:100%;
+  }
+
+  .sub_titulo_legenda{
+    font-size: 17px;
+    font-weight: 900;
+    margin:0;
+    padding: 0;
+  }
+
+  .box-img{
+    float: left;
+    width:10%;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px;
+    padding-top: 12px;
+    box-sizing: border-box;
+    height: 76px;
+    align-items: center;
+    align-content: center;
+  }
+
+  .texttop{
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 90%;
+    font-weight: bold;
+  }
+
+  .header img{
+    padding: 10px;
+  }
+
+  .linha1{
+    background-color: #ccc;
+  }
+
+  .linha1 th{
+    border-style: solid;
+    border-width: 1px;
+    margin:0px;
+  }
+
+  .linhabody th{
+    border-style: solid;
+    border-width: 1px;
+    margin:0px;
+    border-color: #ccc;
+  }
+
+  .linhabody{
+    background-color: #fff;
+  }
+
+  input{
+    width: 100%;
+    border-width:1px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-left: 4px;
+  }
+
+  table{
+    border-collapse: separate;
+    border-spacing: 0px;
+    margin: 0px;
+    padding:0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-bottom-width: 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right-width: 2px;
+  }
+
+  td{
+    margin: 0px;
+    padding:0px;
+    margin-left: -1px;
+  }
+
+  .num{
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  select{
+    width: 100%;
+    margin-left: 0px;
+    height: 20px;
+  }
+
+  .logo{
+    height: 48px; 
+    width:70%; 
+    margin-left: -5px;
+  }
+
+  thead th{
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  .legendas{
+    float: left;
+    background-color: #cecece;
+    border-style: solid;
+    border-color: black;
+    border-width:1px;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+
+  .titulo_legenda{
+    font-size: 26px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .logo {
+      width: 90%;
+    }
+  }
+</style>
+  </head>
+
+  <body>
+    <div id="header" style="height: 100px;">
+
+      <div class="box-img">
+        <center>
+          <img class="logo" src="https://i.ibb.co/cw2fs79/1-LOGO-CIP-AZUL-SMALL.jpg" alt="1-LOGO-CIP-AZUL-SMALL" border="0">
+        </center>
+      </div>
+      <div class="texttop">
+        <center>
+         <h1 class="header_top">Solicitação de Cadastro de Item</h1>
+       </center>
+     </div>
+   </div>
+ </br>
+
+
+<div id="teste" style="width: 98%; margin-left: 1%;">
+  <form name="form_cadastro" method="post" action="">
+    <!--------------------------------- INICIO TABELA ---------------------------------------->
+    <table>
+      <thead>
+        <tr cellspacing="0" cellpadding="0" class="linha1"><th width="4%">N°</th>
+          <th cellspacing="0" cellpadding="0" width="17%">Família</th>
+          <th cellspacing="0" cellpadding="0" width="43%">Descrição Item</th>
+          <th cellspacing="0" cellpadding="0" width="5%">Uni. Medida</th>
+          <th cellspacing="0" cellpadding="0" width="2%">Estoque</th>
+          <th cellspacing="0" cellpadding="0" width="15%">Aplicação</th>
+          <th cellspacing="0" cellpadding="0" width="10%">Código</th></tr>
+        </thead>
+        <tbody>
+
+      <!----------------LINHA 1---------------->
+      <tr class="linhabody"><td class="num" style="text-align: center;">1</td>
+        <td><select style="" name="familia1">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao1"></td>
+        <td><select style="" name="unidade1">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque1">
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao1">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo1"></td></tr>
+
+      <!----------------LINHA 2---------------->
+      <tr class="linhabody"><td class="num"  style="text-align: center;">2</td>
+        <td><select style="" name="familia2">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao2"></td>
+        <td><select style="" name="unidade2">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque2">
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao2">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo2"></td></tr>
+
+      <!----------------LINHA 3---------------->
+      <tr class="linhabody"><td class="num"  style="text-align: center;">3</td>
+        <td><select style="" name="familia3">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao3"></td>
+        <td><select style="" name="unidade3">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque3">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao3">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo3"></td></tr>
+
+      <!----------------LINHA 4---------------->
+      <tr class="linhabody"><td class="num"  style="text-align: center;">4</td>
+        <td><select style="" name="familia4">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao4"></td>
+        <td><select style="" name="unidade4">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque4">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao4">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo4"></td></tr>
+
+      <!----------------LINHA 5---------------->
+      <tr id="5" class="linhabody"><td class="num"  style="text-align: center;">5</td>
+        <td><select style="" name="familia5">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao5"></td>
+        <td><select style="" name="unidade5">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque5">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao5">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo5"></td></tr>
+
+
+      <!----------------LINHA 6---------------->
+      <tr id="6" class="linhabody"><td class="num"  style="text-align: center;">6</td>
+        <td><select style="" name="familia6">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao6"></td>
+        <td><select style="" name="unidade6">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque6">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao6">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo6"></td></tr>
+
+
+      <!----------------LINHA 7---------------->
+      <tr id="7" class="linhabody"><td class="num"  style="text-align: center;">7</td>
+        <td><select style="" name="familia7">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao7"></td>
+        <td><select style="" name="unidade7">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque7">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao7">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo7"></td></tr>
+
+
+      <!----------------LINHA 8---------------->
+      <tr id="8" class="linhabody"><td  class="num" style="text-align: center;">8</td>
+        <td><select style="" name="familia8">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao8"></td>
+        <td><select style="" name="unidade8">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td><select style="" name="estoque8">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select></td>
+        <td><select style="" name="apliacacao8">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo8"></td></tr>
+
+
+      <!----------------LINHA 9---------------->
+      <tr id="9" class="linhabody"><td class="num"  style="text-align: center;">9</td>
+        <td><select style="" name="familia9">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao9"></td>
+        <td><select style="" name="unidade9">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque9">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao9">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo9"></td></tr>
+
+
+      <!----------------LINHA 10---------------->
+      <tr id="10" class="linhabody"><td class="num"  style="text-align: center;">10</td>
+        <td><select style="" name="familia10">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao10"></td>
+        <td><select style="" name="unidade10">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque10">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao10">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo10"></td></tr>
+
+
+      <!----------------LINHA 11---------------->
+      <tr id="11" class="linhabody"><td class="num"  style="text-align: center;">11</td>
+        <td><select style="" name="familia11">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao11"></td>
+        <td><select style="" name="unidade11">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque11">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao11">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo11"></td></tr>
+
+
+      <!----------------LINHA 12---------------->
+      <tr id="12" class="linhabody"><td class="num"  style="text-align: center;">12</td>
+        <td><select style="" name="familia12">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao12"></td>
+        <td><select style="" name="unidade12">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque12">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao12">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo12"></td></tr>
+
+
+      <!----------------LINHA 13---------------->
+      <tr id="13" class="linhabody"><td class="num"  style="text-align: center;">13</td>
+       <td><select style="" name="familia13">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao13"></td>
+        <td><select style="" name="unidade13">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque13">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao13">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo13"></td></tr>
+
+      <!----------------LINHA 14---------------->
+      <tr id="14" class="linhabody"><td class="num"  style="text-align: center;">14</td>
+        <td><select style="" name="familia14">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao14"></td>
+        <td><select style="" name="unidade14">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque14">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao14">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo14"></td></tr>
+
+      <!----------------LINHA 15---------------->
+      <tr id="15" class="linhabody"><td class="num"  style="text-align: center;">15</td>
+        <td><select style="" name="familia15">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao15"></td>
+        <td><select style="" name="unidade15">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque15">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao15">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo15"></td></tr>
+
+
+      <!----------------LINHA 16---------------->
+      <tr id="16" class="linhabody"><td class="num"  style="text-align: center;">16</td>
+        <td><select style="" name="familia16">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao16"></td>
+        <td><select style="" name="unidade1+">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque16">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao16">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo16"></td></tr>
+
+      <!----------------LINHA 17---------------->
+      <tr id="17" class="linhabody"><td class="num"  style="text-align: center;">17</td>
+        <td><select style="" name="familia17">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao17"></td>
+        <td><select style="" name="unidade17">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque17">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao17">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo17"></td></tr>
+
+      <!----------------LINHA 18---------------->
+      <tr id="18" class="linhabody"><td class="num"  style="text-align: center;">18</td>
+       <td><select style="" name="familia18">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao18"></td>
+        <td><select style="" name="unidade18">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque18">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao18">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo18"></td></tr>
+
+      <!----------------LINHA 19---------------->
+      <tr id="19" class="linhabody"><td class="num"  style="text-align: center;">19</td>
+        <td><select style="" name="familia19">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao19"></td>
+        <td><select style="" name="unidade19">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque19">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao19">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo19"></td></tr>
+
+      <!----------------LINHA 20---------------->
+      <tr id="20" class="linhabody"><td class="num"  style="text-align: center;">20</td>
+        <td><select style="" name="familia20">
+          <option value="0">Produto Acabado</option>
+          <option value="1">Mátéria Prima</option>
+          <option value="2">Componentes</option>
+          <option value="3">Embalagens</option>
+          <option value="4">Material de Consumo Produtio ou Não</option>
+          <option value="5">Material Produtivo</option>
+          <option value="6">Ativo Imobilizado</option>
+          <option value="7">Prod. Sem Controle de Estoque</option>
+          <option value="9">Serviço Externo</option>
+        </select></td>
+        <td><input type="text" name="descricao20"></td>
+        <td><select style="" name="unidade20">
+          <option value="PC">PC</option>
+          <option value="LT">LT</option>
+          <option value="KG">KG</option>
+          <option value="M">M</option>
+          <option value="ML">ML</option>
+        </select></td>
+        <td>
+          <select style="" name="estoque20">
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+          </select>
+        </td>
+        <td><select style="" name="apliacacao20">
+          <option value="1">Uso e Consumo</option>
+          <option value="2">Instalação Predial</option>
+          <option value="3">Material de Escritório</option>
+          <option value="4">Máquinas e Equipamentos</option>
+          <option value="5">Ferramentas</option>
+          <option value="6">Veículos</option>
+          <option value="7">Outros</option>
+        </select></td>
+        <td><input type="text" name="codigo20"></td></tr>
+    </tbody>
+  </table>
+    <!---------------- FIM TABELA----------------> 
+  </form> 
+  <br>
+  <button id="btn_add" class="add">Adicionar Linha </button>
+  <button id="btn_remover" class="remove">Remover Linha </button>
+
+</div>
+    
+    </br>
+<!--------------------------------- INICIO LEGENDAS ---------------------------------------->
+<div style="width: 98%; margin-left: 1%;">
+  <div style="width:100%; margin-top: 50px;">
+    <h3 class="titulo_legenda"><u>Legendas</u>:</h3>
+  </div>
+
+</br>
+ <!---------------- Unidade ----------------> 
+<div id="legen1">
+  <hr>
+  <h4 id="unidade" class="sub_titulo_legenda">Unidade de Medida:</h4>
+  <div id="legendas1">
+  </br>
+  <div class="legendas">
+    [PC] PEÇA
+  </div>
+  <div class="legendas">
+    [LT] LITRO
+  </div>
+  <div class="legendas">
+    [KG] KILOGRAMA
+  </div>
+  <div class="legendas">
+    [M] METRO QUADRADO
+  </div>
+  <div class="legendas">
+    [ML] MILHEIRO
+  </div>
+  </br></br>
+</div>
+</div>
+ <!---------------- Familia ----------------> 
+<div id="legen2">
+  <hr>
+  <h4 id="familia" class="sub_titulo_legenda">Família:</h4>
+    <div id="legendas2">
+      </br>
+      <div class="legendas">
+        [0] PRODUTO ACABADO
+      </div>
+      <div class="legendas">
+        [1] MATÉRIA PRIMA
+      </div>
+      <div class="legendas">
+          [2] COMPONENTES
+      </div>
+      <div class="legendas">
+           [3] EMBALAGENS
+      </div>
+      <div class="legendas">
+           [4] MATERIAL DE CONSUMO PRODUTIVO OU NÃO
+      </div>
+      <div class="legendas">
+           [5] MATERIAL PRODUTIVO
+      </div>
+      <div class="legendas">
+           [6] ATIVO IMOBILIZADO
+      </div>
+      <div class="legendas">
+           [7] PROD. SEM CONTROLE DE ESTOQUE
+      </div>
+      <div class="legendas">
+           [9] SERVIÇO EXTERNO
+      </div>
+      <div style="float: left; color: #7b7979;">
+        <h6 style="font-size: 16px;margin:0px; margin-left: 5px; margin-top: 8px;"> Mais informações em: O:\Setores\Gerais\Portal CIP\Normas\NCGER (Arquivo NCGER002) </h6>
+      </div>
+      </br></br></br></br></br></br></br>
+    </div>  
+</div>
+
+ <!---------------- Aplicação ----------------> 
+
+<div>
+  <hr>
+  <h4 id="aplicacao" class="sub_titulo_legenda" title="(O campo aplicação somente devera ser preenchido para itens sem controle de estoque)">Aplicação: (O campo "aplicação" somente deverá ser preenchido para itens sem controle de estoque)</h4>
+<div id="legendas3">
+  </br>
+  <div class="legendas">
+    [1] USO E CONSUMO
+  </div>
+  <div class="legendas">
+    [2] INSTALAÇÃO PREDIAL
+  </div>
+  <div class="legendas">
+    [3] MATERIAL DE ESCRITÓRIO
+  </div>
+  <div class="legendas">
+    [4] MÁQUINAS E EQUIPAMENTOS
+  </div>
+  <div class="legendas">
+    [5] VEÍCULOS
+  </div>
+  <div class="legendas">
+    [6] FERRAMENTAS
+  </div>
+  <div class="legendas">
+    [7] OUTROS
+  </div>
+  <div style="width: 100%; float: left;">
+    <hr>
+  </div>
+</div>
+</div>
+</div>
+<hr width="98%" id="divisao">
+</br></br></br>
+
+
+ <!---------------- JQUERY ----------------> 
+  <script>
+
+    $(document).ready(function(){
+      $("#legendas1").hide();
+      $("#legendas2").hide();
+      $("#legendas3").hide();
+
+      $("#6").hide();
+      $("#7").hide();
+      $("#8").hide();
+      $("#9").hide();
+      $("#10").hide();
+      $("#11").hide();
+      $("#12").hide();
+      $("#13").hide();
+      $("#14").hide();
+      $("#15").hide();
+      $("#16").hide();
+      $("#17").hide();
+      $("#18").hide();
+      $("#19").hide();
+      $("#20").hide();
+
+
+      $("#unidade").click(function(){
+        $("#legendas1").show(1000);
+        $("#legendas2").hide(800);
+        $("#legendas3").hide(800);
+        $("#divisao").show(800);
+      });
+      $("#familia").click(function(){
+        $("#legendas2").show(1000);
+        $("#legendas1").hide(800);
+        $("#legendas3").hide(800);
+        $("#divisao").show(800);
+      });
+      $("#aplicacao").click(function(){
+        $("#legendas3").show(1000);
+        $("#legendas1").hide(800);
+        $("#legendas2").hide(800);
+        $("#divisao").hide(800);
+      });
+      $("#unidade").dblclick(function(){
+      $("#legendas1").hide(800);
+      $("#divisao").show(800);
+      });
+      $("#familia").dblclick(function(){
+      $("#legendas2").hide(800);
+      $("#divisao").show(800);
+      });
+      $("#aplicacao").dblclick(function(){
+      $("#legendas3").hide(800);
+      $("#divisao").show(800);
+      });
+
+      /*
+      $("#teste").find("tr").click(function(){
+      $(($(this).attr("id")));
+      var id = $(this).attr("id");
+      id = parseInt(id, 10)
+      id = id + 1 
+      $("#"+id).show(1000);
+      });
+      $("#teste").find("tr").dblclick(function(){
+      $(($(this).attr("id")));
+      var id = $(this).attr("id");
+      id = parseInt(id, 10);
+      while (id <= 20){
+        id= id+1;
+        $("#"+id).hide(800);
+      }
+      });
+      */
+      var id = 5;
+      id = parseInt(id, 10);
+      $("#btn_add").click(function(){
+        if(id==20){
+         return;
+      }
+      id = id + 1
+      $("#"+id).show(1000);
+      });
+
+
+      $("#btn_remover").click(function(){
+        if(id==4){
+         return;
+      }
+      id = id
+      var id2 = id;
+      id = parseInt(id, 10);
+      id= id - 1
+      $("#"+id2).hide(400);
+      });   
+});
+
+
+
+  </script>
+  </body>
+</html>
