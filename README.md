@@ -38,7 +38,7 @@ A planilha foi elaborada para sanar uma necessidade real de uma empresa do ramo 
 
 ### Desenvolvido com
 
-Esse projeto foi desenvolvido utilizando a ferramenta Excel do pacote Office, em conjunto com a programação em VBA (Visual Basic for Applications).
+Esse projeto foi desenvolvido utilizando a ferramenta Excel do pacote Office, em conjunto com a programação em VBA (Visual Basic for Applications) em conjunto com as tecnologias web citadas abaixo para a construção do formulário web.
 
 * [Excel](https://www.microsoft.com/pt-br/microsoft-365/excel)
 * [Pacote Office](https://www.microsoft.com/pt-br/microsoft-365/business/compare-all-microsoft-365-business-products-b?&ef_id=EAIaIQobChMIw83Cx5HK8AIVwoORCh0CWwJ3EAAYASAAEgLcufD_BwE:G:s&OCID=AID2100139_SEM_EAIaIQobChMIw83Cx5HK8AIVwoORCh0CWwJ3EAAYASAAEgLcufD_BwE:G:s&lnkd=Google_O365SMB_Brand&gclid=EAIaIQobChMIw83Cx5HK8AIVwoORCh0CWwJ3EAAYASAAEgLcufD_BwE)
@@ -69,6 +69,13 @@ Todos os parâmetros podem ser editados pelo VBA, como o servidor usado pelo SMT
     <img width="33%" src="https://i.ibb.co/44mv7nW/nf2.jpg"> 
     <br>
     <em>Trecho do código em VBA que precisa ser modificado para entram em acordo com as suas necessidades e ambiente de desenvolvimento e produção. </em>
+</p>
+<hr>
+
+<p align="center" width="100%">
+    <img width="33%" src="https://i.ibb.co/zHrxZ5X/item2.jpg"> 
+    <br>
+    <em>Formulário web para ser utilizado dentro do modulo do ERP da empresa. </em>
 </p>
 
 ## Contato
